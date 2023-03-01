@@ -216,12 +216,11 @@ def run(clock_speed=1, files=None):
         else:
             break
 
+
 def main():
     files = ["testprogram"]
 
     run(-1, files)
-
-
 
 
 if __name__ == "__main__":

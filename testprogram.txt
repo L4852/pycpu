@@ -1,4 +1,4 @@
 LOAD_BI 255
-INC_A None
-CMP_AB None
+INC_A
+CMP_AB
 JUMP_LT 1

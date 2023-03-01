@@ -1,6 +1,3 @@
-import pdb
-
-
 def parse(string):
     OPCODES = [
         "NO_OP",
@@ -27,23 +24,21 @@ def parse(string):
 
     trimmed = [k.strip() for k in trimmed_lines]
 
-    splitted = [tuple(k.split(' ')) for k in trimmed]
+    splitted = [k.split(' ') for k in trimmed]
 
     operations = []
 
     for item in splitted:
-        data = item[1]
-
-        if data == 'None':
+        if len(item) == 1:
             data = None
+        else:
+            data = item[1]
+            try:
+                int(data)
+                data = int(data)
+            except Exception as e:
+                pass
 
-        try:
-            int(data)
-            data = int(data)
-        except Exception as e:
-            pass
         operations.append((OPCODES.index(item[0]), data))
-
-
 
     return operations
