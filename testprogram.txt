@@ -1,0 +1,4 @@
+LOAD_BI 255
+INC_A None
+CMP_AB None
+JUMP_LT 1
